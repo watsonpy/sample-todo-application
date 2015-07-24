@@ -1,6 +1,5 @@
 # OSX & Workspace
 .DS_STORE
-*.sublime-project
 *.sublime-workspace
 tests/_coverage
 docs/_build

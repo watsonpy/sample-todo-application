@@ -1,0 +1,21 @@
+{
+	"build_systems":
+	[
+		{
+			"cmd": "source ${project_path}/.venv/bin/activate && ${project_path}/console.py project test",
+			"name": "Python 3 Unit Test",
+			"selector": "source.shell",
+			"shell": "bash"
+		}
+	],
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+	"settings":
+	{
+		"validate_imports": true
+	}
+}
