@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}Home{% endblock %} - WatsonTodo</title>
+        <!-- Materialize is only used for quick styling purposes -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+        <style>
+            /** This should obviously NOT be in here */
+            body {
+                padding: 0 20px 20px;
+            }
+            .message {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            .message.success {
+                background: #81c784;
+            }
+            .message.error {
+                background: #ef5350;
+            }
+        </style>
+    </head>
+    <body>
+        {% block content %}{% endblock %}
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+        {% block scripts %}{% endblock %}
+    </body>
+</html>

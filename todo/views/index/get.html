@@ -1,0 +1,14 @@
+{% extends '_layouts/base.html' %}
+
+{% block content %}
+<h1>Todo List</h1>
+{% include '_includes/messages.html' %}
+<div class="collection">
+{% for todo in todos %}
+<a class="collection-item" href="{{ url('todo', id=todo.id) }}">{{ todo.name }}<span class="badge">{{ todo.id }}</span></a>
+{% else %}
+<div class="collection-item">You should do something...</div>
+{% endfor %}
+</div>
+<a href="{{ url('todo') }}" class="waves-effect waves-light btn">Add a todo</a>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends '_layouts/base.html' %}
+
+{% block content %}
+<h1>{% if todo %}Editing{% else %}Adding{% endif %} a Todo</h1>
+{% include '_includes/messages.html' %}
+{{ form.open() }}
+<div class="row">
+    <div class="input-field col s12">
+        {{ form.name.render_with_label() }}
+    </div>
+</div>
+<div class="row">
+    <div class="input-field col s6">
+        {{ form.submit.render(class="waves-effect waves-light btn", name='go') }}
+        {% if todo %}<a href="javascript:;" class="delete waves-effect waves-light btn">Delete</a>{% endif %}
+        <a href="{{ url('index') }}" class="waves-effect waves-light btn">Back</a>
+    </div>
+</div>
+{{ form.close() }}
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+    $('.delete').on('click', function() {
+        var todoForm = $('form');
+        todoForm.find('input[name="HTTP_REQUEST_METHOD"]').val('DELETE');
+        todoForm.trigger('submit');
+    });
+</script>
+{% endblock %}

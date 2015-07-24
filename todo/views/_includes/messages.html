@@ -1,0 +1,3 @@
+{% for namespace, message in flash_messages() %}
+    <div class="message {{ namespace }}">{{ message }}</div>
+{% endfor %}
